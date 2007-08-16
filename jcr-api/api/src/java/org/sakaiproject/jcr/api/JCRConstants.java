@@ -304,4 +304,6 @@ public interface JCRConstants {
      * nt:versionedChild
      */
     public static final String NT_VERSIONEDCHILD = "nt:versionedChild";
+    
+    public static final String MIX_SAKAIPROPERTIES = "sakaijcr:properties-mix";
 }
