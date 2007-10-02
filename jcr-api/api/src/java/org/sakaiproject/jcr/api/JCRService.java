@@ -22,6 +22,7 @@
 package org.sakaiproject.jcr.api;
 
 import javax.jcr.LoginException;
+import javax.jcr.Node;
 import javax.jcr.Repository;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -94,4 +95,6 @@ public interface JCRService
 	 */
 	Session setSession(Session session);
 
+
+	boolean needsMixin(Node n, String mixin) throws RepositoryException;
 }
