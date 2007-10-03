@@ -96,5 +96,19 @@ public interface JCRService
 	Session setSession(Session session);
 
 
+	/**
+	 * Return true if the node supplied should have the suggested mixin added. This enables
+	 * repository implementations to ignore certain mixing properties.
+	 * @param n
+	 * @param mixin
+	 * @return
+	 * @throws RepositoryException
+	 */
 	boolean needsMixin(Node n, String mixin) throws RepositoryException;
+
+	/**
+	 * Return true of the session is active
+	 * @return
+	 */
+	boolean hasActiveSession();
 }
