@@ -60,7 +60,7 @@ public interface JCRService
 	 * @throws RepositoryException
 	 */
 	Session getSession() throws LoginException, RepositoryException;
-	
+
 	/**
 	 * @return
 	 * @throws LoginException
@@ -75,10 +75,6 @@ public interface JCRService
 	 */
 	void logout() throws LoginException, RepositoryException;
 
-	/**
-	 * @param id
-	 */
-	void dump(String id);
 
 	/**
 	 * Get the repository
@@ -86,19 +82,21 @@ public interface JCRService
 	 * @return
 	 */
 	Repository getRepository();
-	
-	
+
 	/**
-	 * Set the current thread session and returns the previous one, setting to null will clear the current session
+	 * Set the current thread session and returns the previous one, setting to
+	 * null will clear the current session
+	 * 
 	 * @param session
-	 * @return 
+	 * @return
 	 */
 	Session setSession(Session session);
 
-
 	/**
-	 * Return true if the node supplied should have the suggested mixin added. This enables
-	 * repository implementations to ignore certain mixing properties.
+	 * Return true if the node supplied should have the suggested mixin added.
+	 * This enables repository implementations to ignore certain mixing
+	 * properties.
+	 * 
 	 * @param n
 	 * @param mixin
 	 * @return
@@ -108,7 +106,17 @@ public interface JCRService
 
 	/**
 	 * Return true of the session is active
+	 * 
 	 * @return
 	 */
 	boolean hasActiveSession();
+
+	/**
+	 * If true, the jcr service is enabled, anything that is using JCR should
+	 * check for a JCRService in the component manager and then check for this
+	 * to be enabled.
+	 * 
+	 * @return
+	 */
+	boolean isEnabled();
 }
