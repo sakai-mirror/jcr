@@ -20,6 +20,9 @@
     <module>impl</module>
     <module>pack</module>
   </modules>
+  <properties>
+	  <jackrabbit.version>1.3.3</jackrabbit.version>
+ </properties>
  <dependencies>
     <dependency>
       <groupId>javax.jcr</groupId>
