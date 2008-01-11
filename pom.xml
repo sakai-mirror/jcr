@@ -5,7 +5,7 @@
     <artifactId>master</artifactId>
     <groupId>org.sakaiproject</groupId>
     <version>M2</version>
-    <relativePath>../master/pom.xml</relativePath>
+    <relativePath>../master</relativePath>
   </parent>
   <name>Sakai JSR-170 Service</name>
   <groupId>org.sakaiproject</groupId>
@@ -64,5 +64,7 @@
   
   <modules>
     <module>jcr-api</module>
+    <module>jcr-util</module>
+    <module>jackrabbit-impl</module>
   </modules>
 </project>
