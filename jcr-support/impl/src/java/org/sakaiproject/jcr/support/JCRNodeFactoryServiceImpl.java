@@ -97,7 +97,7 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 			node.addMixin(JCRConstants.MIX_REFERENCEABLE);
 		}
 
-		node.setProperty(JCRConstants.JCR_LASTMODIFIED, new GregorianCalendar());
+//		node.setProperty(JCRConstants.JCR_LASTMODIFIED, new GregorianCalendar());
 
 	}
 
@@ -115,6 +115,7 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 	public Node createNode(String id, String type) throws JCRNodeFactoryServiceException
 	{
 		if ( !enabled ) {
+			log.warn("JCRService is not enabled, please use jcr.experimental=true in salai.properties ");
 			return null;
 		}
 		Node node = null;
@@ -125,9 +126,11 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 			// the node might already exist
 			if (n != null)
 			{
+				log.info("Found node in session ");
 				return n;
 			}
 
+			log.info("Found creating node ");
 			String vpath = getParentPath(id);
 			while (n == null && !"/".equals(vpath))
 			{
@@ -138,7 +141,7 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 				}
 				else
 				{
-					log.debug("Got Path " + vpath + " as " + n);
+					log.info("Got Path " + vpath + " as " + n);
 				}
 			}
 			if (n == null)
@@ -185,7 +188,7 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 							|| JCRConstants.NT_FOLDER.equals(type))
 					{
 						if (log.isDebugEnabled())
-							log.debug("Adding Node " + pathElements[i] + " as " + type
+							log.debug("Adding Node " + pathElements[i] + " as " + JCRConstants.NT_FOLDER
 									+ " to " + currentNode.getPath());
 						Node newNode = currentNode.addNode(pathElements[i],
 								JCRConstants.NT_FOLDER);
