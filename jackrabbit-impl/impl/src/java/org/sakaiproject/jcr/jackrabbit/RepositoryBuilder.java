@@ -266,7 +266,7 @@ public class RepositoryBuilder
 			{
 				log.info(MessageFormat.format("\nJCR Repository Config is \n"
 						+ "\trepositoryConfig = {0} \n" + "\tdbURL = {1}\n"
-						+ "\tdbUser = {2} \n" + "\tdbPass = {3} \n"
+						+ "\tdbUser = {2} \n"
 						+ "\tdbDriver = {4} \n" + "\tdbDialect = {5} \n"
 						+ "\trepository Home = {6}\n" + "\tcontentOnFilesystem = {7}\n"
 						+ "\tpersistanceManageerClass= {8}\n",
