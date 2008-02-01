@@ -100,6 +100,21 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 //		node.setProperty(JCRConstants.JCR_LASTMODIFIED, new GregorianCalendar());
 
 	}
+	
+	/* (non-Javadoc)
+	 * @see org.sakaiproject.jcr.support.api.JCRNodeFactoryService#createFile(java.lang.String)
+	 */
+	public Node createFile(String filePath) throws JCRNodeFactoryServiceException
+	{
+		return createNode(filePath, JCRConstants.NT_FILE);
+	}
+	/* (non-Javadoc)
+	 * @see org.sakaiproject.jcr.support.api.JCRNodeFactoryService#createFolder(java.lang.String)
+	 */
+	public Node createFolder(String folderPath) throws JCRNodeFactoryServiceException
+	{
+		return createNode(folderPath, JCRConstants.NT_FOLDER);
+	}
 
 	/**
 	 * Create a new node. Nodes are of the form
@@ -112,7 +127,7 @@ public class JCRNodeFactoryServiceImpl implements JCRNodeFactoryService
 	 * @throws NodeFactoryServiceException 
 	 * @throws TypeException
 	 */
-	public Node createNode(String id, String type) throws JCRNodeFactoryServiceException
+	private Node createNode(String id, String type) throws JCRNodeFactoryServiceException
 	{
 		if ( !enabled ) {
 			log.warn("JCRService is not enabled, please use jcr.experimental=true in salai.properties ");
