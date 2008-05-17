@@ -94,6 +94,11 @@ limitations under the License.
       <artifactId>sakai-db-api</artifactId>
       <version>${sakai.version}</version>
     </dependency>
+   <dependency>
+      <groupId>org.sakaiproject</groupId>
+      <artifactId>sakai-user-util</artifactId>
+      <version>${sakai.version}</version>
+    </dependency>
     
   </dependencies>
 </project>
