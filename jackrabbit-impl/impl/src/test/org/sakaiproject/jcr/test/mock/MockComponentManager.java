@@ -106,7 +106,9 @@ public class MockComponentManager
 		rb.setDbPass("manager");
 		rb.setDbDriver("org.apache.derby.jdbc.EmbeddedDriver");
 		rb.setDbDialect("derby");
-		rb.setContentOnFilesystem("target/repository-content");
+		rb.setContentOnFilesystem("true");
+		rb.setUseSharedFSBlobStore("true");
+		rb.setSharedFSBlobLocation("target/repository-shared");
 		rb.setRepositoryHome("target/repository");
 		rb.setServerConfigurationService(scs);
 		rb.setSqlService(sqls);
