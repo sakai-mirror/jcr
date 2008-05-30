@@ -236,6 +236,15 @@ public class RepositoryBuilder
 			contentOnFilesystem = "false";
 		}
 
+		if ( useSharedFSBlobStore == null )
+		{
+			 useSharedFSBlobStore = "false";
+		}
+		if ( sharedFSBlobLocation == null ) 
+		{
+			 sharedFSBlobLocation="jcrblobs";
+		}
+
 		/*
 		 * Currently Setting the journal location, journalLocation, in
 		 * compenents.xml using the sakai.home macro
